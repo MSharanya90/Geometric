@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Redwood Wilderness Conservation Reserve</name>
+    <Placemark>
+      <name>Eagle Ridge Sanctuary</name>
+      <description>Restricted wildlife preserve</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -121.950,36.550,0
+              -121.920,36.550,0
+              -121.920,36.520,0
+              -121.950,36.520,0
+              -121.950,36.550,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Ridgecrest Crestline Trail</name>
+      <LineString>
+        <coordinates>
+          -121.960,36.560,0
+          -121.940,36.545,0
+          -121.930,36.530,0
+          -121.915,36.510,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Lookout Ranger Post</name>
+      <Point>
+        <coordinates>-121.935,36.535,450</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Metropolitan University Campus Survey</name>
+    <description>Cadastral and asset survey containing administrative boundaries, pathways, and landmark points.</description>
+    
+    <!-- Polygon: Main Academic Quad -->
+    <Placemark>
+      <name>Main Academic Quad</name>
+      <description>Central green zone and student commons</description>
+      <ExtendedData>
+        <Data name="FacilityCode"><value>QUAD-01</value></Data>
+        <Data name="Zone"><value>Recreational Green</value></Data>
+        <Data name="MaintainedBy"><value>Campus Grounds Dept</value></Data>
+      </ExtendedData>
+      <Polygon>
+        <extrude>1</extrude>
+        <altitudeMode>clampToGround</altitudeMode>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -122.2580,37.8720,0
+              -122.2560,37.8720,0
+              -122.2560,37.8705,0
+              -122.2580,37.8705,0
+              -122.2580,37.8720,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- Polygon: Science Complex (with interior courtyard hole) -->
+    <Placemark>
+      <name>Science Complex</name>
+      <description>Laboratory buildings with central atrium courtyard</description>
+      <ExtendedData>
+        <Data name="FacilityCode"><value>SCI-BLD</value></Data>
+        <Data name="Floors"><value>4</value></Data>
+      </ExtendedData>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -122.2595,37.8735,0
+              -122.2582,37.8735,0
+              -122.2582,37.8725,0
+              -122.2595,37.8725,0
+              -122.2595,37.8735,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+        <innerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -122.2591,37.8732,0
+              -122.2586,37.8732,0
+              -122.2586,37.8728,0
+              -122.2591,37.8728,0
+              -122.2591,37.8732,0
+            </coordinates>
+          </LinearRing>
+        </innerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- Polygon with unclosed ring to test automatic repair -->
+    <Placemark>
+      <name>Botanical Research Greenhouse</name>
+      <description>Controlled flora experiment enclosure (unclosed ring)</description>
+      <ExtendedData>
+        <Data name="Code"><value>BIO-GREEN</value></Data>
+      </ExtendedData>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              -122.2555,37.8715,0
+              -122.2545,37.8715,0
+              -122.2545,37.8708,0
+              -122.2555,37.8708,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+
+    <!-- LineString: North-South Pedestrian Promenade -->
+    <Placemark>
+      <name>North-South Pedestrian Promenade</name>
+      <description>Primary illuminated pedestrian corridor</description>
+      <ExtendedData>
+        <Data name="Surface"><value>Paved Brick</value></Data>
+        <Data name="Width_m"><value>6.5</value></Data>
+      </ExtendedData>
+      <LineString>
+        <tessellate>1</tessellate>
+        <coordinates>
+          -122.2570,37.8745,0
+          -122.2570,37.8725,0
+          -122.2568,37.8700,0
+          -122.2565,37.8680,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+
+    <!-- LineString: Strawberry Creek Pathway -->
+    <Placemark>
+      <name>Strawberry Creek Pathway</name>
+      <description>Meandering streamside nature trail</description>
+      <ExtendedData>
+        <Data name="Surface"><value>Crushed Gravel</value></Data>
+      </ExtendedData>
+      <LineString>
+        <coordinates>
+          -122.2600,37.8710,0
+          -122.2588,37.8712,0
+          -122.2575,37.8716,0
+          -122.2560,37.8714,0
+          -122.2548,37.8719,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+
+    <!-- Point: Memorial Bell Tower -->
+    <Placemark>
+      <name>Memorial Campanile Bell Tower</name>
+      <description>Iconic campus observation tower and geodetic landmark</description>
+      <ExtendedData>
+        <Data name="Height_m"><value>93.6</value></Data>
+        <Data name="YearBuilt"><value>1914</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-122.2578,37.8721,93.6</coordinates>
+      </Point>
+    </Placemark>
+
+    <!-- Point: Solar Weather Station -->
+    <Placemark>
+      <name>Atmospheric Monitoring Station #4</name>
+      <description>Micro-climate telemetry sensor</description>
+      <ExtendedData>
+        <Data name="SensorType"><value>Davis Vantage Pro2</value></Data>
+      </ExtendedData>
+      <Point>
+        <coordinates>-122.2550,37.8730,0</coordinates>
+      </Point>
+    </Placemark>
+
+  </Document>
+</kml>

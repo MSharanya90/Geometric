@@ -1,0 +1,56 @@
+services:
+  db:
+    image: postgis/postgis:16-3.4
+    container_name: geomeasure_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: geomeasure
+      POSTGRES_USER: geomeasure
+      POSTGRES_PASSWORD: geomeasure_secret
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U geomeasure -d geomeasure"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: geomeasure_backend
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql://geomeasure:geomeasure_secret@db:5432/geomeasure
+      ENVIRONMENT: production
+      LOG_LEVEL: INFO
+      MAX_UPLOAD_SIZE_MB: 50
+      CORS_ORIGINS: "http://localhost:3000,http://localhost:5173"
+    ports:
+      - "8000:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: geomeasure_frontend
+    restart: unless-stopped
+    depends_on:
+      - backend
+    ports:
+      - "3000:80"
+
+volumes:
+  pgdata:
